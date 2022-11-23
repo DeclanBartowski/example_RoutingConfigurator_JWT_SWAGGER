@@ -1,0 +1,41 @@
+openapi: 3.0.0
+info:
+  title: 'Пример документации к API'
+  version: '0.1'
+paths:
+  /test:
+    post:
+      tags:
+        - Категория
+      summary: 'Название блока'
+      description: 'Описание блока'
+      operationId: d47ee6a1182b5136550da46e3ac5cce8
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              required:
+                - integer
+                - string
+              properties:
+                integer:
+                  description: Число
+                  type: integer
+                  example: '152467180'
+                string:
+                  description: Строка
+                  type: string
+                  example: 17660-2
+                file:
+                  type: string
+                  format: binary
+                'string_arary[]':
+                  description: 'Множественная строка'
+                  type: array
+                  items: {  }
+                  example: [test, test1]
+              type: object
+      responses:
+        '200':
+          description: 'Successful operation'
